@@ -31,11 +31,12 @@ class Driver
 # State Changes: Nil
   def start_game
     new_game = Game.new
+    new_game.best_of_n
     p1 = create_player(new_game.moves)
-    p1.get_move
+    #p1.get_move
     p2 = create_player(new_game.moves)
-    p2.get_move
-    new_game.get_winner(p1, p2)
+    #p2.get_move
+    new_game.play_best_of_n(p1, p2)
     puts "#{p1.name} has #{p1.score} and #{p2.name} has #{p2.score}."
   end
 # Public: create_player

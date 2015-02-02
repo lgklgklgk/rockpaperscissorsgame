@@ -14,7 +14,7 @@ require_relative "rules"
 # best_of_n
 # get_winner
 class Game
-  attr_reader :moves, :games
+  attr_reader :moves, :games, :rules
 # Public: initialize
 # Creates an instance of the Game class as well as creates an instance of the 
 # Rules class within the Game class. Calls the Rules attribute, valid_moves.
@@ -35,6 +35,13 @@ class Game
   def best_of_n
     puts "How many games are we playing?"
     @games = gets.chomp.to_i
+  end
+  def play_best_of_n(p1, p2)
+    until p1.score == (@games / 2) + 1 || p2.score == (@games / 2) + 1
+      p1.get_move
+      p2.get_move
+      get_winner(p1, p2)
+    end
   end
 # Public get_winner
 # Accepts each Player object's moves and using the Rules class is able to determine
