@@ -41,7 +41,7 @@ class Rules
     if @rules[0].include?("#{move1} #{move2}")
       who_wins += 1
     elsif @rules[1].include?("#{move1} #{move2}")
-      who_wins -= -1
+      who_wins += 3
     else @rules[2].include?("#{move1} #{move2}")
       who_wins += 2
     end

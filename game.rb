@@ -58,7 +58,7 @@ class Game
     if who_wins == 1
       p1.increase_score
       puts "#{p1.name} wins!"
-    elsif who_wins == -1
+    elsif who_wins == 3
       p2.increase_score
       puts "#{p2.name} wins!"
     elsif who_wins == 2
